@@ -1,8 +1,9 @@
 import net.sf.json.JSONObject;
 
-public class Hello2 {
-	 public Hello2() { 
+public class Hello2 {//将java对象转换为json对象
 
+	 public Hello2() {
+		 System.out.println("好久没敲代码了哦");
 		  } 
 	 public String Object2Json(Object obj){ 
 		    JSONObject json = JSONObject.fromObject(obj);//将java对象转换为json对象 
