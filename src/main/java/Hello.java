@@ -15,22 +15,22 @@ public class Hello {
 		int parseInt = Integer.parseInt(id);
 		int parseInt2 = Integer.parseInt(id2);
 		if(parseInt<parseInt2) {
-			System.out.println("parseInt2´ó");
+			System.out.println("parseInt2å¤§");
 		}else {
-			System.out.println("parseInt´ó");
+			System.out.println("parseIntå¤§");
 		}
 		System.out.println("parseInt="+parseInt);
-		System.out.println("===============");
-		 String s = "{\"total\":3,\"customer\":[ {\"lxdh\":\"123\",\"xm\":\"ÕÅÈı\",\"zjhm\":\"1234\",\"_updates\":\"1\"},{\"lxdh\":\"123\",\"xm\":\"ÕÅÈı\",\"zjhm\":\"1234\",\"_updates\":\"2\"}]}";
-		    //½«json×Ö·û´®×ªÎªmap¶ÔÏó
+		System.out.println("===============1121");
+		 String s = "{\"total\":3,\"customer\":[ {\"lxdh\":\"123\",\"xm\":\"å¼ ä¸‰\",\"zjhm\":\"1234\",\"_updates\":\"1\"},{\"lxdh\":\"123\",\"xm\":\"å¼ ä¸‰\",\"zjhm\":\"1234\",\"_updates\":\"2\"}]}";
+		    //å°†jsonå­—ç¬¦ä¸²è½¬ä¸ºmapå¯¹è±¡
 		    JSONObject jsonObject = JSONObject.parseObject(s);
 		   Map<String,Object> map = (Map<String, Object>)jsonObject;
-		    //½«MapÖĞ·ûºÏÊı×é½á¹¹µÄ×Ö·û´®×ªÎªlist¶ÔÏó£¬list¶ÔÏóÖĞÊÇMap
+		    //å°†Mapä¸­ç¬¦åˆæ•°ç»„ç»“æ„çš„å­—ç¬¦ä¸²è½¬ä¸ºlistå¯¹è±¡ï¼Œlistå¯¹è±¡ä¸­æ˜¯Map
 		    System.out.println("list="+map);
 		    String s2 = map.get("customer").toString();
 		    System.out.println(s2);
-		    List<Map> list = JSONObject.parseArray(s2, Map.class);//ÕâÀïµÄµÚ¶ş¸ö²ÎÊıÒ²¿ÉÒÔÓÃ¶ÔÓ¦µÄ×Ô¶¨ÒåjavaBean.class
-		    //±éÀúÆäÖĞµÄmap£¬È¡³öÃ¿¸öÊôĞÔÖµ
+		    List<Map> list = JSONObject.parseArray(s2, Map.class);//è¿™é‡Œçš„ç¬¬äºŒä¸ªå‚æ•°ä¹Ÿå¯ä»¥ç”¨å¯¹åº”çš„è‡ªå®šä¹‰javaBean.class
+		    //éå†å…¶ä¸­çš„mapï¼Œå–å‡ºæ¯ä¸ªå±æ€§å€¼
 		    for (Map item : list) {
 		       System.out.println(item.get("_updates"));
 		    	//System.out.println("get_update"+item.get_update());
@@ -42,17 +42,17 @@ public class Hello {
 	       // map.put("phoneList", list);
 	        map2.put("currentUser", "zhang");
 
-	        //net.sf.json.JSONObject ½«Map×ª»»ÎªJSON·½·¨
+	        //net.sf.json.JSONObject å°†Mapè½¬æ¢ä¸ºJSONæ–¹æ³•
 	        //JSONObject json = JSONObject.fromObject(map);
 
-	        //org.json.JSONObject ½«Map×ª»»ÎªJSON·½·¨
+	        //org.json.JSONObject å°†Mapè½¬æ¢ä¸ºJSONæ–¹æ³•
 	        JSONObject json =new JSONObject(map2);
 	        System.out.println("json="+json);
 	    
 	        System.out.println("=================");
 	        
 	        List<PhoneNum> list2 = new ArrayList<>();
-	        list2.add(new PhoneNum("1","123","1234","1","2","1","2","1","ÕÅÈı","1","1","1","1"));
+	        list2.add(new PhoneNum("1","123","1234","1","2","1","2","1","å¼ ä¸‰","1","1","1","1"));
 	        HashMap<String, Object> hashMap = new HashMap<String,Object>();
 	        hashMap.put("2018",list2);
 	        hashMap.put("2019",new String("asd"));
@@ -60,11 +60,11 @@ public class Hello {
 	        for(Map.Entry vap: hashMap.entrySet()) {
 	        	System.out.println(vap.getValue());
 	        }
-	        System.out.println("=================list¶ÔÏó±ä³Éjson");
+	        System.out.println("=================listå¯¹è±¡å˜æˆjson");
 	        List<PhoneNum> personList = new ArrayList<>();
-	        personList.add(new PhoneNum("1","123","1234","1","2","1","2","1","ÕÅÈı","1","1","1","1"));
-	        personList.add(new PhoneNum("1","123","1234","1","2","1","2","1","ÕÅÈı","1","1","1","1"));
-	        personList.add(new PhoneNum("1","123","1234","1","2","1","2","1","ÕÅÈı","1","1","1","1"));
+	        personList.add(new PhoneNum("1","123","1234","1","2","1","2","1","å¼ ä¸‰","1","1","1","1"));
+	        personList.add(new PhoneNum("1","123","1234","1","2","1","2","1","å¼ ä¸‰","1","1","1","1"));
+	        personList.add(new PhoneNum("1","123","1234","1","2","1","2","1","å¼ ä¸‰","1","1","1","1"));
 	        int size = personList.size();
 	        String s3="total 3";
 	        Object obj2 = JSONArray.toJSON(personList);
@@ -72,7 +72,7 @@ public class Hello {
 	        String jsonString = JSON.toJSONString(s3);
 	        String string = new String(jsonString+json2);
 	        System.out.println(string);
-	        System.out.println("½«List<Person>×ª³Éjson:" + json2);
+	        System.out.println("å°†List<Person>è½¬æˆjson:" + json2);
 	        
 	      
 	        
