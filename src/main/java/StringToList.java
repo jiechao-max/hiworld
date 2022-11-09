@@ -1,9 +1,7 @@
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import com.alibaba.fastjson.JSONObject;
-
+import net.sf.json.JSONObject;
 
 
 public class StringToList {
@@ -15,6 +13,7 @@ public static void main(String[] args) {
 	   Map<String,Object> map = (Map<String, Object>)jsonObject;
 	    //将Map中符合数组结构的字符串转为list对象，list对象中是Map
 	    System.out.println("list="+map);
+	    // 测试合并
 	    String s2 = map.get("customer")+"";
 	    System.out.println(s2);
 	    List<Map> list = JSONObject.parseArray(s2, Map.class);//这里的第二个参数也可以用对应的自定义javaBean.class
@@ -23,8 +22,8 @@ public static void main(String[] args) {
 	       System.out.println(item.get("_updates"));
 	    	//System.out.println("get_update"+item.get_update());
 	    }
-	    
-	    
-	    
+
+
+
 }
 }
