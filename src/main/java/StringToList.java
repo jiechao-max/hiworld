@@ -16,6 +16,7 @@ public static void main(String[] args) {
 	    //将Map中符合数组结构的字符串转为list对象，list对象中是Map
 	    System.out.println("list="+map);
 	    String s2 = map.get("customer")+"";
+	    // 测试合并分支二
 	    System.out.println(s2);
 	    List<Map> list = JSONObject.parseArray(s2, Map.class);//这里的第二个参数也可以用对应的自定义javaBean.class
 	    //遍历其中的map，取出每个属性值
@@ -23,8 +24,8 @@ public static void main(String[] args) {
 	       System.out.println(item.get("_updates"));
 	    	//System.out.println("get_update"+item.get_update());
 	    }
-	    
-	    
-	    
+
+
+
 }
 }
